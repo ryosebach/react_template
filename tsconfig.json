@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "target": "es6",
+      "jsx": "react",
+      "sourceMap": true,
+      "baseUrl": "./src",
+      "outDir": "build",
+      "paths": {
+          "*": ["*"]
+      },
+      "removeComments": false,
+      "noUnusedParameters": true,
+      "typeRoots": ["node_modules/@types"]
+    },
+    "exclude": [
+        "node_modules"
+    ]
+  }
+  
