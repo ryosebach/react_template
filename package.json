@@ -1,8 +1,19 @@
 {
   "name": "react_template",
   "version": "1.0.0",
-  "description": "",
   "main": "build/src/server.js",
+  "scripts": {
+    "cleanup": "rm -rf build public/*.bundle.js",
+    "build:server": "gulp build",
+    "build:server:w": "gulp watch",
+    "build:client": "webpack",
+    "build:client:w": "webpack -d --progress --colors --no-warnings --display-error-details --watch",
+    "build": "cleanup && build:server build:client",
+    "build:w": "build:server:w && build:client:w",
+    "start": "node build/server.js",
+    "start:dev": "NODE_ENV=development nodemon --delay 1 --watch build build/server.js",
+    "dev": "cleanup && build:server && concurrently --raw --kill-others && build:w && start:dev"
+  },
   "dependencies": {
     "express": "^4.16.4",
     "react": "^16.8.6",
@@ -20,24 +31,10 @@
     "gulp-typescript": "^5.0.1",
     "merge2": "^1.2.3",
     "ts-loader": "^5.4.6",
+    "tslint": "^5.16.0",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.2"
   },
-  "scripts": {
-    "cleanup": "rm -rf build public/*.bundle.js",
-    "build:server": "gulp build",
-    "build:server:w": "gulp watch",
-    "build:client": "webpack",
-    "build:client:w": "webpack -d --progress --colors --no-warnings --display-error-details --watch",
-    "build": "cleanup && build:server build:client",
-    "build:w": "build:server:w && build:client:w",
-    "start": "node build/server.js",
-    "start:dev": "NODE_ENV=development nodemon --delay 1 --watch build build/server.js",
-    "dev": "cleanup && build:server && concurrently --raw --kill-others && build:w && start:dev"
-  },
-  "keywords": [
-    "react"
-  ],
   "author": "ryosebach",
   "license": "MIT"
 }
