@@ -3,11 +3,11 @@ import { jsx } from '@emotion/core';
 import { Helmet } from 'react-helmet';
 
 const renderHelmet = () => {
- return(
-  <Helmet>
-    <title>Not Found</title>
-  </Helmet>
- );
+  return(
+    <Helmet>
+      <title>Not Found</title>
+    </Helmet>
+  );
 };
 
 /**

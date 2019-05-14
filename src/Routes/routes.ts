@@ -16,7 +16,6 @@ const routes = [
         path: '*',
         component: NotFound
     }
-  ];
+];
   
-  export default routes;
-  
+export default routes;
